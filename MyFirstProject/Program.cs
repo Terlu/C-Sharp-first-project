@@ -1,6 +1,6 @@
 ﻿using System;
 
-//Unit 5
+//Unit 5 (06Jun2023)
 // Unit 5-1: The program asks a name of the user, then writes "Hello, *name*!!!" to console.
 Console.WriteLine("Enter your name.");
 string name = Console.ReadLine();
@@ -16,7 +16,7 @@ string fullName = lastName + " " + firstName + " " + paternalName;
 Console.WriteLine(fullName);
 
 
-//Unit 6
+//Unit 6 (06Jun2023)
 //Write the code to do the following:
 //Unit 6-1: User enters 2 integers (A and B). Writo to console A multiplied by B; and the remainder of B divided by A.
 Console.WriteLine("Unit 6-1: \nEnter an integer А.");
