@@ -1,19 +1,15 @@
 ﻿using System;
 
-//Unit 8 (07Jun2023) - Conditionals part2
-//Unit 8-1.  User enters an integer. If it is even, write "Even" to console. Else, write "Odd" to console. 
-Console.WriteLine("Unit 8-1: \nEnter an integer.");
-string input81 = Console.ReadLine();
-int a81 = Convert.ToInt32(input81);
-if (a81 % 2 == 0)
-{
-    Console.WriteLine("Even\n");
-}
-else
-{
-    Console.WriteLine("Odd\n");
-}
 //Unit 8-2. User enters 2 integers A and B. Write to console a difference: max (A,B) - min (A,B). 
+Console.WriteLine("Unit 8-2 \nEnter an integer A.");
+string input82 = Console.ReadLine();
+int a82 = Convert.ToInt32(input82);
+Console.WriteLine("Enter an integer B.");
+input82 = Console.ReadLine();
+int b82 = Convert.ToInt32(input82);
+int c82 = Math.Max(a82, b82) - Math.Min(a82, b82);
+Console.WriteLine("Difference: max (A,B) - min (A,B) equals: "+c82+"\n");
+
 //Unit 8-3. User enters 2 integers A and B and C. Write them to console in ascending order.
 //Unit 8-4. User enters 2 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0.
 
@@ -121,11 +117,18 @@ if (a73 % 2 == 0)
     Console.WriteLine("Even\n");
 }
 
-
-
-
-
-
-
+//Unit 8 (07Jun2023) - Conditionals part2
+//Unit 8-1.  User enters an integer. If it is even, write "Even" to console. Else, write "Odd" to console. 
+Console.WriteLine("Unit 8-1: \nEnter an integer.");
+string input81 = Console.ReadLine();
+int a81 = Convert.ToInt32(input81);
+if (a81 % 2 == 0)
+{
+    Console.WriteLine("Even\n");
+}
+else
+{
+    Console.WriteLine("Odd\n");
+}
 
 
