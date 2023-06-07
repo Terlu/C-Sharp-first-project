@@ -1,17 +1,45 @@
 ﻿using System;
 
-//Unit 8-2. User enters 2 integers A and B. Write to console a difference: max (A,B) - min (A,B). 
-Console.WriteLine("Unit 8-2 \nEnter an integer A.");
-string input82 = Console.ReadLine();
-int a82 = Convert.ToInt32(input82);
+//Unit 8-4. User enters 3 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0.
+Console.WriteLine("\nUnit 8-4 \nEnter an integer A.");
+string input84 = Console.ReadLine();
+int a84 = Convert.ToInt32(input84);
 Console.WriteLine("Enter an integer B.");
-input82 = Console.ReadLine();
-int b82 = Convert.ToInt32(input82);
-int c82 = Math.Max(a82, b82) - Math.Min(a82, b82);
-Console.WriteLine("Difference: max (A,B) - min (A,B) equals: "+c82+"\n");
+input84 = Console.ReadLine();
+int b84 = Convert.ToInt32(input84);
+Console.WriteLine("Enter an integer C.");
+input84 = Console.ReadLine();
+int c84 = Convert.ToInt32(input84);
+Console.WriteLine("Trying to find answer(s) for X: AX^2+BX+C=0.");
+double discriminant;
+// D = b*b − 4ac 
+discriminant = b84*b84 - 4*a84*c84;
+if (a84 == 0)
+{
+    // X = -c/b
+    Console.WriteLine("There is 1 answer for X:" + (-c84) / (b84));
+} else
+{
+    if (discriminant < 0)
+    {
+        Console.WriteLine("There are no answers for X.");
+    }
+    else
+    {
+        // X = (-b +- (D)^0.5)/2a
+        double temp84 = Math.Sqrt(discriminant);
+        //Console.WriteLine(temp84)
+        if (discriminant > 0)
+        {
+            Console.WriteLine("There are 2 answers for X: " + (-b84 + temp84) / (2 * a84) + " and " + (-b84 - temp84) / (2 * a84));
+        }
+        else if (discriminant == 0)
+        {
+            Console.WriteLine("There is 1 answer for X:" + (-b84) / (2 * a84));
+        };
+    };
+};
 
-//Unit 8-3. User enters 2 integers A and B and C. Write them to console in ascending order.
-//Unit 8-4. User enters 2 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0.
 
 //Unit 5 (06Jun2023)
 // Unit 5-1: The program asks a name of the user, then writes "Hello, *name*!!!" to console.
@@ -130,5 +158,46 @@ else
 {
     Console.WriteLine("Odd\n");
 }
+//Unit 8-2. User enters 2 integers A and B. Write to console a difference: max (A,B) - min (A,B). 
+Console.WriteLine("Unit 8-2 \nEnter an integer A.");
+string input82 = Console.ReadLine();
+int a82 = Convert.ToInt32(input82);
+Console.WriteLine("Enter an integer B.");
+input82 = Console.ReadLine();
+int b82 = Convert.ToInt32(input82);
+int c82 = Math.Max(a82, b82) - Math.Min(a82, b82);
+Console.WriteLine("Difference: max (A,B) - min (A,B) equals: " + c82 + "\n");
 
-
+//Unit 8-3. User enters 3 integers A and B and C. Write them to console in ascending order.
+Console.WriteLine("Unit 8-3 \nEnter an integer A.");
+string input83 = Console.ReadLine();
+int a83 = Convert.ToInt32(input83);
+Console.WriteLine("Enter an integer B.");
+input83 = Console.ReadLine();
+int b83 = Convert.ToInt32(input83);
+Console.WriteLine("Enter an integer C.");
+input83 = Console.ReadLine();
+int c83 = Convert.ToInt32(input83);
+int temp83;
+// sort (A, B) pair in in ascending order.
+if (a83 > b83)
+{
+    temp83 = a83;
+    a83 = b83;
+    b83 = temp83;
+}
+// sort (B, C) pair in in ascending order.
+if (b83 > c83)
+{
+    temp83 = b83;
+    b83 = c83;
+    c83 = temp83;
+}
+// sort (A, B) pair in in ascending order again.
+if (a83 > b83)
+{
+    temp83 = a83;
+    a83 = b83;
+    b83 = temp83;
+}
+Console.WriteLine("Entered integers were sorted in ascending order: " + a83 + ", " + b83 + ", " + c83 + "\n");
