@@ -1,6 +1,6 @@
 ﻿using System;
 
-//Unit 8-4. User enters 3 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0.
+//Unit 8-4. User enters 3 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0. 
 Console.WriteLine("\nUnit 8-4 \nEnter an integer A.");
 string input84 = Console.ReadLine();
 int a84 = Convert.ToInt32(input84);
