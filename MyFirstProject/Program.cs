@@ -1,28 +1,44 @@
 ﻿using System;
 
-//Unit 9-2 User enters 3 integers A, B and C. Check if a sum of any pair is more that remaining integer.  
-Console.WriteLine("\nUnit 9-2 \nEnter an integer A.");
-string input92 = Console.ReadLine();
-int a92 = Convert.ToInt32(input92);
+//Unit 9-3 User enters 3 integers A and B and C. Write them to console in descending order using 3 conditionals.
+Console.WriteLine("\nUnit 9-3 \nEnter an integer A.");
+string input93 = Console.ReadLine();
+int a93 = Convert.ToInt32(input93);
 Console.WriteLine("Enter an integer B.");
-input92 = Console.ReadLine();
-int b92 = Convert.ToInt32(input92);
+input93 = Console.ReadLine();
+int b93 = Convert.ToInt32(input93);
 Console.WriteLine("Enter an integer C.");
-input92 = Console.ReadLine();
-int c92 = Convert.ToInt32(input92);
-if ((a92 + b92 > c92) & (a92 + c92 > b92) & (b92 + c92 > a92))
+input93 = Console.ReadLine();
+int c93 = Convert.ToInt32(input93);
+int temp93First;
+int temp93Second;
+Console.Write("Please see the integers in descending order: ");
+if ((a93 >= b93) & (a93 >= c93))
 {
-    Console.WriteLine("Yes! A sum of any pair is more that the remaining integer.");
+    Console.Write(a93 + ", ");
+    temp93First = b93;
+    temp93Second = c93;
+
+} else if ((b93 >= a93) & (b93 >= c93))
+{
+    Console.Write(b93 + ", ");
+    temp93First = a93;
+    temp93Second = c93;
 } else
 {
-    Console.WriteLine("No! A sum of at least one pair is not more that remaining integer.");
+    Console.Write(c93 + ", ");
+    temp93First = a93;
+    temp93Second = b93;
 }
 
-
-//Unit 9-3 Пользователь вводит 3 числа. Выведите их в консоль в порядке убывания за 3 условия.
-//todo
-
-
+if(temp93First >= temp93Second)
+{
+    Console.Write(temp93First + ", " + temp93Second);
+}
+else
+{
+    Console.Write(temp93Second + ", " + temp93First);
+}
 
 
 
@@ -248,4 +264,23 @@ else if ((a91 >= 40) & (a91 <= 50))
 else
 {
     Console.WriteLine("This integer does not belong to any intervals.");
+}
+
+//Unit 9-2 User enters 3 integers A, B and C. Check if a sum of any pair is more that remaining integer.  
+Console.WriteLine("\nUnit 9-2 \nEnter an integer A.");
+string input92 = Console.ReadLine();
+int a92 = Convert.ToInt32(input92);
+Console.WriteLine("Enter an integer B.");
+input92 = Console.ReadLine();
+int b92 = Convert.ToInt32(input92);
+Console.WriteLine("Enter an integer C.");
+input92 = Console.ReadLine();
+int c92 = Convert.ToInt32(input92);
+if ((a92 + b92 > c92) & (a92 + c92 > b92) & (b92 + c92 > a92))
+{
+    Console.WriteLine("Yes! A sum of any pair is more that the remaining integer.");
+}
+else
+{
+    Console.WriteLine("No! A sum of at least one pair is not more that remaining integer.");
 }
