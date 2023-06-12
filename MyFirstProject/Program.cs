@@ -1,45 +1,52 @@
 ﻿using System;
+using System.Runtime.Serialization.Formatters;
+using System.Xml.Linq;
 
-//Unit 9-3 User enters 3 integers A and B and C. Write them to console in descending order using 3 conditionals.
-Console.WriteLine("\nUnit 9-3 \nEnter an integer A.");
-string input93 = Console.ReadLine();
-int a93 = Convert.ToInt32(input93);
-Console.WriteLine("Enter an integer B.");
-input93 = Console.ReadLine();
-int b93 = Convert.ToInt32(input93);
-Console.WriteLine("Enter an integer C.");
-input93 = Console.ReadLine();
-int c93 = Convert.ToInt32(input93);
-int temp93First;
-int temp93Second;
-Console.Write("Please see the integers in descending order: ");
-if ((a93 >= b93) & (a93 >= c93))
+//Unit 10
+//Unit 10-1. User enters 2-digit number. Write to console a spelling of this number. For instance, write "twenty five" for “25” entered by the user. 
+//NB: Think about first and last digit separately.
+Console.WriteLine("\nUnit 10-1: \nEnter a 2-digit number (from 10 to 99).");
+string input101 = Console.ReadLine();
+int a101 = Convert.ToInt32(input101);
+//test that input is correct:
+if ((a101 >= 10) & (a101 <= 99))
 {
-    Console.Write(a93 + ", ");
-    temp93First = b93;
-    temp93Second = c93;
-
-} else if ((b93 >= a93) & (b93 >= c93))
-{
-    Console.Write(b93 + ", ");
-    temp93First = a93;
-    temp93Second = c93;
+    int firstDigit = a101/10;
+    int secondDigit = a101%10;
+    //Console.WriteLine(firstDigit + " " + secondDigit);
+    string[] arrayFirst = new string[] {"", "one", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    string[] arraySecond = new string[] {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+    //Console.WriteLine(arraySecond[secondDigit]);
+    if (firstDigit == 1)
+    {
+        if (secondDigit == 1)
+        {
+            Console.WriteLine("Please have your number in written: eleven");
+        }
+        else if (secondDigit == 2){
+            Console.WriteLine("Please have your number in written: twelve");
+        } else if (secondDigit == 3)
+        {
+            Console.WriteLine("Please have your number in written: thirteen");
+        } else if (firstDigit == 5) {
+            Console.WriteLine("Please have your number in written: fifteen");
+        }
+        else if (firstDigit == 8)
+        {
+            Console.WriteLine("Please have your number in written: eighteen");
+        } else
+        {
+            Console.WriteLine("Please have your number in written: " + arraySecond[secondDigit] + "teen");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Please have your number in written: " + arrayFirst[firstDigit] + " " + arraySecond[secondDigit]);
+    };
 } else
 {
-    Console.Write(c93 + ", ");
-    temp93First = a93;
-    temp93Second = b93;
+    Console.WriteLine("Your input was not correct");
 }
-
-if(temp93First >= temp93Second)
-{
-    Console.Write(temp93First + ", " + temp93Second);
-}
-else
-{
-    Console.Write(temp93Second + ", " + temp93First);
-}
-
 
 
 //Unit 5 (06Jun2023)
@@ -283,4 +290,46 @@ if ((a92 + b92 > c92) & (a92 + c92 > b92) & (b92 + c92 > a92))
 else
 {
     Console.WriteLine("No! A sum of at least one pair is not more that remaining integer.");
+}
+
+//Unit 9-3 User enters 3 integers A and B and C. Write them to console in descending order using 3 conditionals.
+Console.WriteLine("\nUnit 9-3 \nEnter an integer A.");
+string input93 = Console.ReadLine();
+int a93 = Convert.ToInt32(input93);
+Console.WriteLine("Enter an integer B.");
+input93 = Console.ReadLine();
+int b93 = Convert.ToInt32(input93);
+Console.WriteLine("Enter an integer C.");
+input93 = Console.ReadLine();
+int c93 = Convert.ToInt32(input93);
+int temp93First;
+int temp93Second;
+Console.Write("Please see the integers in descending order: ");
+if ((a93 >= b93) & (a93 >= c93))
+{
+    Console.Write(a93 + ", ");
+    temp93First = b93;
+    temp93Second = c93;
+
+}
+else if ((b93 >= a93) & (b93 >= c93))
+{
+    Console.Write(b93 + ", ");
+    temp93First = a93;
+    temp93Second = c93;
+}
+else
+{
+    Console.Write(c93 + ", ");
+    temp93First = a93;
+    temp93Second = b93;
+}
+//and the third conditional:
+if (temp93First >= temp93Second)
+{
+    Console.Write(temp93First + ", " + temp93Second);
+}
+else
+{
+    Console.Write(temp93Second + ", " + temp93First);
 }
