@@ -1,26 +1,28 @@
 ﻿using System;
 
-//Unit 9-2 Пользователь вводит 3 числа. Проверьте, что сумма любых двух чисел больше третьего. 
-// todo
+//Unit 9-2 User enters 3 integers A, B and C. Check if a sum of any pair is more that remaining integer.  
+Console.WriteLine("\nUnit 9-2 \nEnter an integer A.");
+string input92 = Console.ReadLine();
+int a92 = Convert.ToInt32(input92);
+Console.WriteLine("Enter an integer B.");
+input92 = Console.ReadLine();
+int b92 = Convert.ToInt32(input92);
+Console.WriteLine("Enter an integer C.");
+input92 = Console.ReadLine();
+int c92 = Convert.ToInt32(input92);
+if ((a92 + b92 > c92) & (a92 + c92 > b92) & (b92 + c92 > a92))
+{
+    Console.WriteLine("Yes! A sum of any pair is more that the remaining integer.");
+} else
+{
+    Console.WriteLine("No! A sum of at least one pair is not more that remaining integer.");
+}
+
 
 //Unit 9-3 Пользователь вводит 3 числа. Выведите их в консоль в порядке убывания за 3 условия.
 //todo
 
-//Unit 9 (12Jun2023)
-//Unit 9-1 User enters an integer. Check if this integer belongs to an interval (0 ; 10) or (20; 30) or (40; 50). 
 
-Console.WriteLine("Unit 9-1: \nEnter an integer.");
-string input91 = Console.ReadLine();
-int a91 = Convert.ToInt32(input91);
-if ((a91 >= 0) & (a91 <= 10)){
-    Console.WriteLine("This integer belongs to the interval (0 ; 10).");
-} else if ((a91 >= 20) & (a91 <= 30)){
-    Console.WriteLine("This integer belongs to the interval (20 ; 30).");
-} else if ((a91 >= 40) & (a91 <= 50)){
-    Console.WriteLine("This integer belongs to the interval (40 ; 50).");
-} else {
-    Console.WriteLine("This integer does not belong to any intervals.");
-}
 
 
 
@@ -225,3 +227,25 @@ else
         };
     };
 };
+
+//Unit 9 (12Jun2023)
+//Unit 9-1 User enters an integer. Check if this integer belongs to an interval (0 ; 10) or (20; 30) or (40; 50). 
+Console.WriteLine("Unit 9-1: \nEnter an integer.");
+string input91 = Console.ReadLine();
+int a91 = Convert.ToInt32(input91);
+if ((a91 >= 0) & (a91 <= 10))
+{
+    Console.WriteLine("This integer belongs to the interval (0 ; 10).");
+}
+else if ((a91 >= 20) & (a91 <= 30))
+{
+    Console.WriteLine("This integer belongs to the interval (20 ; 30).");
+}
+else if ((a91 >= 40) & (a91 <= 50))
+{
+    Console.WriteLine("This integer belongs to the interval (40 ; 50).");
+}
+else
+{
+    Console.WriteLine("This integer does not belong to any intervals.");
+}
