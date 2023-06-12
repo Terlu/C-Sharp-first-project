@@ -1,49 +1,32 @@
 ﻿using System;
 
-//Unit 8-4. User enters 3 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0. 
-Console.WriteLine("\nUnit 8-4 \nEnter an integer A.");
-string input84 = Console.ReadLine();
-int a84 = Convert.ToInt32(input84);
-Console.WriteLine("Enter an integer B.");
-input84 = Console.ReadLine();
-int b84 = Convert.ToInt32(input84);
-Console.WriteLine("Enter an integer C.");
-input84 = Console.ReadLine();
-int c84 = Convert.ToInt32(input84);
-Console.WriteLine("Trying to find answer(s) for X: AX^2+BX+C=0.");
-double discriminant;
-// D = b*b − 4ac 
-discriminant = b84*b84 - 4*a84*c84;
-if (a84 == 0)
-{
-    // X = -c/b
-    Console.WriteLine("There is 1 answer for X:" + (-c84) / (b84));
-} else
-{
-    if (discriminant < 0)
-    {
-        Console.WriteLine("There are no answers for X.");
-    }
-    else
-    {
-        // X = (-b +- (D)^0.5)/2a
-        double temp84 = Math.Sqrt(discriminant);
-        //Console.WriteLine(temp84)
-        if (discriminant > 0)
-        {
-            Console.WriteLine("There are 2 answers for X: " + (-b84 + temp84) / (2 * a84) + " and " + (-b84 - temp84) / (2 * a84));
-        }
-        else if (discriminant == 0)
-        {
-            Console.WriteLine("There is 1 answer for X:" + (-b84) / (2 * a84));
-        };
-    };
-};
+//Unit 9-2 Пользователь вводит 3 числа. Проверьте, что сумма любых двух чисел больше третьего. 
+// todo
+
+//Unit 9-3 Пользователь вводит 3 числа. Выведите их в консоль в порядке убывания за 3 условия.
+//todo
+
+//Unit 9 (12Jun2023)
+//Unit 9-1 User enters an integer. Check if this integer belongs to an interval (0 ; 10) or (20; 30) or (40; 50). 
+
+Console.WriteLine("Unit 9-1: \nEnter an integer.");
+string input91 = Console.ReadLine();
+int a91 = Convert.ToInt32(input91);
+if ((a91 >= 0) & (a91 <= 10)){
+    Console.WriteLine("This integer belongs to the interval (0 ; 10).");
+} else if ((a91 >= 20) & (a91 <= 30)){
+    Console.WriteLine("This integer belongs to the interval (20 ; 30).");
+} else if ((a91 >= 40) & (a91 <= 50)){
+    Console.WriteLine("This integer belongs to the interval (40 ; 50).");
+} else {
+    Console.WriteLine("This integer does not belong to any intervals.");
+}
+
 
 
 //Unit 5 (06Jun2023)
 // Unit 5-1: The program asks a name of the user, then writes "Hello, *name*!!!" to console.
-Console.WriteLine("Unit 5-1: \nEnter your name.");
+Console.WriteLine("\nUnit 5-1: \nEnter your name.");
 string name = Console.ReadLine();
 Console.WriteLine("Hello, " + name + "!");
 //Unit 5-2: An user enters their First name, Last name and Paternal name. The program writes the full name to the console.
@@ -201,3 +184,44 @@ if (a83 > b83)
     b83 = temp83;
 }
 Console.WriteLine("Entered integers were sorted in ascending order: " + a83 + ", " + b83 + ", " + c83 + "\n");
+
+//Unit 8-4. User enters 3 integers A and B and C.  Write to console the answer (for X) of the equation:AX^2+BX+C=0. 
+Console.WriteLine("\nUnit 8-4 \nEnter an integer A.");
+string input84 = Console.ReadLine();
+int a84 = Convert.ToInt32(input84);
+Console.WriteLine("Enter an integer B.");
+input84 = Console.ReadLine();
+int b84 = Convert.ToInt32(input84);
+Console.WriteLine("Enter an integer C.");
+input84 = Console.ReadLine();
+int c84 = Convert.ToInt32(input84);
+Console.WriteLine("Trying to find answer(s) for X: AX^2+BX+C=0.");
+double discriminant;
+// D = b*b − 4ac 
+discriminant = b84 * b84 - 4 * a84 * c84;
+if (a84 == 0)
+{
+    // X = -c/b
+    Console.WriteLine("There is 1 answer for X:" + (-c84) / (b84));
+}
+else
+{
+    if (discriminant < 0)
+    {
+        Console.WriteLine("There are no answers for X.");
+    }
+    else
+    {
+        // X = (-b +- (D)^0.5)/2a
+        double temp84 = Math.Sqrt(discriminant);
+        //Console.WriteLine(temp84)
+        if (discriminant > 0)
+        {
+            Console.WriteLine("There are 2 answers for X: " + (-b84 + temp84) / (2 * a84) + " and " + (-b84 - temp84) / (2 * a84));
+        }
+        else if (discriminant == 0)
+        {
+            Console.WriteLine("There is 1 answer for X:" + (-b84) / (2 * a84));
+        };
+    };
+};
