@@ -2,47 +2,23 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-//Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. Use bisection method.
-Console.WriteLine("Unit 12-5: \nEnter a positive integer N that is a cube of some integer.");
-string input125 = Console.ReadLine();
-int n125 = Convert.ToInt32(input125);
-int cubeRoot125 = 0;
-int leftBorder125 = 0;
-int rightBorder125 = n125;
-if (n125 <= 0)
+//Unit 13 (16 Jun 2023) Do While Loop
+//Unit 13-1. User enters a password until enters a correct password "Pass123!"
+Console.WriteLine("Unit 13-1:");
+string password131;
+do
 {
-    Console.WriteLine("N must be a positive integer.");
-}
-else
-{
-    while (leftBorder125 <= rightBorder125)
-    {
-        int middle125 = (leftBorder125 + rightBorder125) / 2;
-        int counter125 = 0;
-        if (middle125 * middle125 * middle125 == n125)
-        {
-            cubeRoot125 = middle125;
-            counter125++;
-            break;
-        }
-        else if (middle125 * middle125 * middle125 < n125)
-        {
-            leftBorder125 = middle125 + 1;
-        }
-        else
-        {
-            rightBorder125 = middle125 - 1;
-        }
-    }
-    if (cubeRoot125 == 0)
-    {
-        Console.WriteLine(n125 + " is not a cube of any integer.");
-    }
-    else
-    {
-        Console.WriteLine("The cube root of " + n125 + " is " + cubeRoot125 + ".\n");
-    }
-}
+    Console.WriteLine("Enter your password.");
+    password131 = Console.ReadLine();    
+} while (password131 != "Pass123!");
+
+
+
+
+//2) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Найти самое большое число последовательности.
+//3) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Найти количество чисел в последовательности, которые делятся на 3, 7 или 11.
+//4) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Определить модуль суммы каких чисел больше, положительных или отрицательных.
+
 
 
 
@@ -122,8 +98,8 @@ if ((a63 == 0) & (b63 == c63))
 //Unit 7 (06Jun2023) - Conditionals 
 //Unit 7-1. User enters their password. Check if it equals to "QWERTY123".
 Console.WriteLine("Unit 7-1\nEnter your password.");
-string password = Console.ReadLine();
-if (password == "QWERTY123")
+string password71 = Console.ReadLine();
+if (password71 == "QWERTY123")
 {
     Console.WriteLine("Password is correct.");
 }
@@ -131,6 +107,7 @@ else
 {
     Console.WriteLine("Password is not correct.\n");
 }
+
 //Unit 7-2. User enters 2 integers (A and B). If A is more than B, count A+B, if A equals B, count A*B, if A is less B, count A-B.
 Console.WriteLine("Unit 7-2: \nEnter an integer А.");
 string input72 = Console.ReadLine();
@@ -587,3 +564,45 @@ while (n124 != 0)
     n124 = n124 / 10;
 }
 Console.WriteLine("The mirror of the number is: " + mirror124 + "\n");
+
+//Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. Use bisection method.
+Console.WriteLine("Unit 12-5: \nEnter a positive integer N that is a cube of some integer.");
+string input125 = Console.ReadLine();
+int n125 = Convert.ToInt32(input125);
+int cubeRoot125 = 0;
+int leftBorder125 = 0;
+int rightBorder125 = n125;
+if (n125 <= 0)
+{
+    Console.WriteLine("N must be a positive integer.");
+}
+else
+{
+    while (leftBorder125 <= rightBorder125)
+    {
+        int middle125 = (leftBorder125 + rightBorder125) / 2;
+        int counter125 = 0;
+        if (middle125 * middle125 * middle125 == n125)
+        {
+            cubeRoot125 = middle125;
+            counter125++;
+            break;
+        }
+        else if (middle125 * middle125 * middle125 < n125)
+        {
+            leftBorder125 = middle125 + 1;
+        }
+        else
+        {
+            rightBorder125 = middle125 - 1;
+        }
+    }
+    if (cubeRoot125 == 0)
+    {
+        Console.WriteLine(n125 + " is not a cube of any integer.");
+    }
+    else
+    {
+        Console.WriteLine("The cube root of " + n125 + " is " + cubeRoot125 + ".\n");
+    }
+}
