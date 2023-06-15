@@ -2,31 +2,19 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-// Unit 11-2 User enters an integer (A). Write all integers from 1 to 1000 that can be divided by A. 
-Console.WriteLine("\nUnit 11-2 \nEnter an integer A.");
-string input112 = Console.ReadLine();
-int a112 = Convert.ToInt32(input112);
-Console.WriteLine("All integers from 1 to 1000 that can be divided by A are: ");
-int counter = 0;
-for (int i = 1; i <= 1000; i++)
+// Unit 11-3 User enters an integer (A). Write all positive integers (B), if B^B < A.
+ Console.WriteLine("Unit 11-3: \nEnter an integer А.");
+string input113 = Console.ReadLine();
+int a113 = Convert.ToInt32(input113);
+int counter113 = 0;
+for (int b113 = 1; b113 * b113 < a113; b113++)
 {
-    if (i % a112 == 0)
-    {
-        counter++;
-        Console.WriteLine(i + " ");
-    }
+    counter113++;
+    //Console.WriteLine(b113 + " "); //for debugging
 }
-if (counter == 0)
-{
-    Console.WriteLine("There are no integers from 1 to 1000 that can be divided by A.");
-}
+Console.WriteLine("Number of positive integers that, if squared, are less that A: " + counter113);
 
-
-
-
-
-/* Unit 11-3 Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
-* Unit 11-4 Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся на 7.
+/* Unit 11-4 Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся на 7.
 * Unit 11-5 Пользователь вводит положительное число (N). Выведите N-ое число ряда Фибоначчи. В ряду Фибоначчи каждое 
 * следующее число является суммой двух предыдущих (1, 1, 2, 3, 5, 8, 13...). Первое и второе считаются равными 1.
 */
@@ -406,4 +394,23 @@ else if (a111 == 0)
 else
 {
     Console.WriteLine("ERROR");
+}
+
+// Unit 11-2 User enters an integer (A). Write all integers from 1 to 1000 that can be divided by A. 
+Console.WriteLine("\nUnit 11-2 \nEnter an integer A.");
+string input112 = Console.ReadLine();
+int a112 = Convert.ToInt32(input112);
+Console.WriteLine("All integers from 1 to 1000 that can be divided by A are: ");
+int counter = 0;
+for (int i = 1; i <= 1000; i++)
+{
+    if (i % a112 == 0)
+    {
+        counter++;
+        Console.WriteLine(i + " ");
+    }
+}
+if (counter == 0)
+{
+    Console.WriteLine("There are no integers from 1 to 1000 that can be divided by A.");
 }
