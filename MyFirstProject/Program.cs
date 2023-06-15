@@ -2,34 +2,47 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-// Unit 11-5 User enters a positive integer (N). Write (N)th nuber of Fibonacci sequence (i.e. every next integer is a sum of of two previous integers: 1, 1, 2, 3, 5, 8, 13...). 
-Console.WriteLine("Unit 11-5: \nEnter a positive integer N.");
-string input115 = Console.ReadLine();
-int n115 = Convert.ToInt32(input115);
-double a115 = 1;
-double b115 = 1;
-if (n115 <= 0) {
-    Console.WriteLine("The number is not positive.");
-}
-else if (n115 == 1)
+// Unit 12 (15 Jun 2023) While.
+//Unit 12-1. User enters a integer A. Find and write largest divisor of A, except A itself.
+Console.WriteLine("Unit 12-1: \nEnter an integer A.");
+string input121 = Console.ReadLine();
+int a121 = Convert.ToInt32(input121);
+int divisor121;
+if (a121 < 0)
 {
-    Console.WriteLine("The first number of Fibonacci sequence is 1.");
-}
-else if (n115 == 2)
+    Console.WriteLine("The largest divisor of " +  a121 +  " is : "  + (-a121));
+} else if (a121 == 0) { 
+    Console.WriteLine("The largest divisor of 0 cannot be found.");
+} else
 {
-    Console.WriteLine("The second number of Fibonacci sequence is 1.");
-}
-else
-{
-    double c115 = 0;
-    for (int i = 3; i <= n115; i++)
+    divisor121 = a121 / 2;
+    while ((divisor121 > 0) & (a121%divisor121 != 0))
     {
-        c115 = a115 + b115;
-        a115 = b115;
-        b115 = c115;
+        divisor121--;
     }
-    Console.WriteLine("The " + n115 + "th number of Fibonacci sequence is " + c115 + ".");
+    Console.WriteLine("The largest divisor of " + a121 + " is : " + divisor121);
 }
+
+
+
+
+
+
+//Unit 12-2) Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
+//Unit 12-3) Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
+//Unit 12-4) Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
+
+//Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. 
+//Console.WriteLine("Unit 12-5: \nEnter a positive integer N that is a cube of some integer.");
+//string input125 = Console.ReadLine();
+//int n125 = Convert.ToInt32(input125);
+//int cubeRoot125 = 0;
+
+
+
+
+
+
 
 
 
@@ -456,3 +469,33 @@ for (int i = a114; i <= b114; i++)
     }
 }
 Console.WriteLine("The sum of all integers from A to B that can be divided by 7 is: " + sum114 + ".");
+
+// Unit 11-5 User enters a positive integer (N). Write (N)th nuber of Fibonacci sequence (i.e. every next integer is a sum of of two previous integers: 1, 1, 2, 3, 5, 8, 13...). 
+Console.WriteLine("Unit 11-5: \nEnter a positive integer N.");
+string input115 = Console.ReadLine();
+int n115 = Convert.ToInt32(input115);
+double a115 = 1;
+double b115 = 1;
+if (n115 <= 0)
+{
+    Console.WriteLine("The number is not positive.");
+}
+else if (n115 == 1)
+{
+    Console.WriteLine("The first number of Fibonacci sequence is 1.");
+}
+else if (n115 == 2)
+{
+    Console.WriteLine("The second number of Fibonacci sequence is 1.");
+}
+else
+{
+    double c115 = 0;
+    for (int i = 3; i <= n115; i++)
+    {
+        c115 = a115 + b115;
+        a115 = b115;
+        b115 = c115;
+    }
+    Console.WriteLine("The " + n115 + "th number of Fibonacci sequence is " + c115 + ".");
+}
