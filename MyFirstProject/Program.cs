@@ -2,35 +2,35 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-
-
-// Unit 11-4 User enters 2 integers (A and B). Write a sum of all integers from A to B that can be divided by 7. 
-Console.WriteLine("Unit 11-4: \nEnter an integer А.");
-string input114 = Console.ReadLine();
-int a114 = Convert.ToInt32(input114);
-Console.WriteLine("Enter an integer B.");
-input114 = Console.ReadLine();
-int b114 = Convert.ToInt32(input114);
-int sum114 = 0;
-for (int i = a114; i <= b114; i++)
-{
-    if (i % 7 == 0)
-    {
-        sum114 += i;
-    }
-}
-Console.WriteLine("The sum of all integers from A to B that can be divided by 7 is: " + sum114 + ".");
-
-
-
-
-
-
-
-
-
 // Unit 11-5 User enters a positive integer (N). Write (N)th nuber of Fibonacci sequence (i.e. every next integer is a sum of of two previous integers: 1, 1, 2, 3, 5, 8, 13...). 
- 
+Console.WriteLine("Unit 11-5: \nEnter a positive integer N.");
+string input115 = Console.ReadLine();
+int n115 = Convert.ToInt32(input115);
+double a115 = 1;
+double b115 = 1;
+if (n115 <= 0) {
+    Console.WriteLine("The number is not positive.");
+}
+else if (n115 == 1)
+{
+    Console.WriteLine("The first number of Fibonacci sequence is 1.");
+}
+else if (n115 == 2)
+{
+    Console.WriteLine("The second number of Fibonacci sequence is 1.");
+}
+else
+{
+    double c115 = 0;
+    for (int i = 3; i <= n115; i++)
+    {
+        c115 = a115 + b115;
+        a115 = b115;
+        b115 = c115;
+    }
+    Console.WriteLine("The " + n115 + "th number of Fibonacci sequence is " + c115 + ".");
+}
+
 
 
 
@@ -439,3 +439,20 @@ for (int b113 = 1; b113 * b113 < a113; b113++)
     //Console.WriteLine(b113 + " "); //for debugging
 }
 Console.WriteLine("Number of positive integers that, if squared, are less that A: " + counter113);
+
+// Unit 11-4 User enters 2 integers (A and B). Write a sum of all integers from A to B that can be divided by 7. 
+Console.WriteLine("Unit 11-4: \nEnter an integer А.");
+string input114 = Console.ReadLine();
+int a114 = Convert.ToInt32(input114);
+Console.WriteLine("Enter an integer B.");
+input114 = Console.ReadLine();
+int b114 = Convert.ToInt32(input114);
+int sum114 = 0;
+for (int i = a114; i <= b114; i++)
+{
+    if (i % 7 == 0)
+    {
+        sum114 += i;
+    }
+}
+Console.WriteLine("The sum of all integers from A to B that can be divided by 7 is: " + sum114 + ".");
