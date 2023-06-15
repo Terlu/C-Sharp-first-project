@@ -2,34 +2,36 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-// Unit 12 (15 Jun 2023) While.
-//Unit 12-1. User enters a integer A. Find and write largest divisor of A, except A itself.
-Console.WriteLine("Unit 12-1: \nEnter an integer A.");
-string input121 = Console.ReadLine();
-int a121 = Convert.ToInt32(input121);
-int divisor121;
-if (a121 < 0)
+//Unit 12-2. User enters 2 integers. Find their greatest common divisor using Euclid algoritm. 
+Console.WriteLine("Unit 12-2: \nEnter an integer А.");
+string input122 = Console.ReadLine();
+int a122 = Convert.ToInt32(input122);
+Console.WriteLine("Enter an integer B.");
+input122 = Console.ReadLine();
+int b122 = Convert.ToInt32(input122);
+int temp122 = 0;
+// //for debugging purposes:
+//int counter122 = 0;
+if ((a122 == 0) & (b122 == 0))
 {
-    Console.WriteLine("The largest divisor of " +  a121 +  " is : "  + (-a121));
-} else if (a121 == 0) { 
-    Console.WriteLine("The largest divisor of 0 cannot be found.");
+    Console.WriteLine("Greatest common divisor is not defined.");
 } else
 {
-    divisor121 = a121 / 2;
-    while ((divisor121 > 0) & (a121%divisor121 != 0))
+    while (b122 != 0)
     {
-        divisor121--;
+        temp122 = b122;
+        b122 = a122 % b122;
+        a122 = temp122;
+        // //for debugging purposes:
+        //counter122++;
+        //Console.WriteLine("Iteration " + counter122 + ": a = " + a122 + ", b = " + b122 + ", temp = " + temp122);
     }
-    Console.WriteLine("The largest divisor of " + a121 + " is : " + divisor121);
+    Console.WriteLine("Greatest common divisor is " + Math.Abs(a122) + ".");
 }
 
 
 
-
-
-
-//Unit 12-2) Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
-//Unit 12-3) Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
+//Unit 12-3. User enters 1 integer. Find the number of odd digits of this integer.
 //Unit 12-4) Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
 
 //Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. 
@@ -498,4 +500,28 @@ else
         b115 = c115;
     }
     Console.WriteLine("The " + n115 + "th number of Fibonacci sequence is " + c115 + ".");
+}
+
+// Unit 12 (15 Jun 2023) While.
+//Unit 12-1. User enters a integer A. Find and write largest divisor of A, except A itself.
+Console.WriteLine("Unit 12-1: \nEnter an integer A.");
+string input121 = Console.ReadLine();
+int a121 = Convert.ToInt32(input121);
+int divisor121;
+if (a121 < 0)
+{
+    Console.WriteLine("The largest divisor of " + a121 + " is : " + (-a121));
+}
+else if (a121 == 0)
+{
+    Console.WriteLine("The largest divisor of 0 cannot be found.");
+}
+else
+{
+    divisor121 = a121 / 2;
+    while ((divisor121 > 0) & (a121 % divisor121 != 0))
+    {
+        divisor121--;
+    }
+    Console.WriteLine("The largest divisor of " + a121 + " is : " + divisor121);
 }
