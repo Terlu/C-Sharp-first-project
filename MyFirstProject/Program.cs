@@ -2,31 +2,18 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-//Unit 12-3. User enters an integer. Find the number of odd digits of this integer.
-Console.WriteLine("Unit 12-3: \nEnter an integer.");
-string input123 = Console.ReadLine();
-int n123 = Convert.ToInt32(input123);
-int oddDigits123 = 0;
-while (n123 != 0)
-{
-    int digit123 = n123 % 10;
-    if (digit123 % 2 != 0)
-    {
-        oddDigits123++;
-    }
-    n123 = n123 / 10;
-}
-Console.WriteLine("The number of odd digits of this integer is: " + oddDigits123 + "\n");
-
-
-
-
-
-
-
-
 
 //Unit 12-4) Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
+Console.WriteLine("Unit 12-4: \nEnter an integer.");
+string input124 = Console.ReadLine();
+int n124 = Convert.ToInt32(input124);
+int mirror124 = 0;
+while (n124 > 0)
+{
+    mirror124 = mirror124 * 10 + n124 % 10;
+    n124 = n124 / 10;
+}
+Console.WriteLine("The mirror of the number is: " + mirror124 + "\n");
 
 //Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. 
 //Console.WriteLine("Unit 12-5: \nEnter a positive integer N that is a cube of some integer.");
@@ -547,3 +534,19 @@ else
     }
     Console.WriteLine("Greatest common divisor is " + Math.Abs(a122) + ".");
 }
+
+//Unit 12-3. User enters an integer. Find the number of odd digits of this integer.
+Console.WriteLine("Unit 12-3: \nEnter an integer.");
+string input123 = Console.ReadLine();
+int n123 = Convert.ToInt32(input123);
+int oddDigits123 = 0;
+while (n123 != 0)
+{
+    int digit123 = n123 % 10;
+    if (digit123 % 2 != 0)
+    {
+        oddDigits123++;
+    }
+    n123 = n123 / 10;
+}
+Console.WriteLine("The number of odd digits of this integer is: " + oddDigits123 + "\n");
