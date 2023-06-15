@@ -2,21 +2,24 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-//Unit 13 (16 Jun 2023) Do While Loop
-//Unit 13-1. User enters a password until enters a correct password "Pass123!"
-Console.WriteLine("Unit 13-1:");
-string password131;
+//Unit 13-2. User enters a sequence of integers of unknown lenght, but ending with 0 (0 to stop).
+//Find and write the maximum integer in this sequence.
+Console.WriteLine("Unit 13-2: \nEnter a sequence of numbers. Enter 0 to stop.");
+string input132;
+int max132 = 0;
 do
 {
-    Console.WriteLine("Enter your password.");
-    password131 = Console.ReadLine();    
-} while (password131 != "Pass123!");
+    input132 = Console.ReadLine();
+    int number132 = Convert.ToInt32(input132);
+    if  (number132 > max132)
+    {
+        max132 = number132;
+    }
+} while (input132 != "0");
+Console.WriteLine("The biggest number in the sequence is " + max132 + ".");
 
-
-
-
-//2) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Найти самое большое число последовательности.
-//3) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Найти количество чисел в последовательности, которые делятся на 3, 7 или 11.
+//Unit 13-3. Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности).
+// Найти количество чисел в последовательности, которые делятся на 3, 7 или 11.
 //4) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Определить модуль суммы каких чисел больше, положительных или отрицательных.
 
 
@@ -606,3 +609,13 @@ else
         Console.WriteLine("The cube root of " + n125 + " is " + cubeRoot125 + ".\n");
     }
 }
+
+//Unit 13 (16 Jun 2023) Do While Loop
+//Unit 13-1. User enters a password until enters a correct password "Pass123!"
+Console.WriteLine("Unit 13-1:");
+string password131;
+do
+{
+    Console.WriteLine("Enter your password.");
+    password131 = Console.ReadLine();
+} while (password131 != "Pass123!");
