@@ -2,22 +2,36 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-// Unit 11-3 User enters an integer (A). Count and Write nubmer of positive integers (B), if B^B < A.
- Console.WriteLine("Unit 11-3: \nEnter an integer А.");
-string input113 = Console.ReadLine();
-int a113 = Convert.ToInt32(input113);
-int counter113 = 0;
-for (int b113 = 1; b113 * b113 < a113; b113++)
-{
-    counter113++;
-    //Console.WriteLine(b113 + " "); //for debugging
-}
-Console.WriteLine("Number of positive integers that, if squared, are less that A: " + counter113);
 
-/* Unit 11-4 User enters 2 integers (A and B). Write a Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся на 7.
-* Unit 11-5 Пользователь вводит положительное число (N). Выведите N-ое число ряда Фибоначчи. В ряду Фибоначчи каждое 
-* следующее число является суммой двух предыдущих (1, 1, 2, 3, 5, 8, 13...). Первое и второе считаются равными 1.
-*/
+
+// Unit 11-4 User enters 2 integers (A and B). Write a sum of all integers from A to B that can be divided by 7. 
+Console.WriteLine("Unit 11-4: \nEnter an integer А.");
+string input114 = Console.ReadLine();
+int a114 = Convert.ToInt32(input114);
+Console.WriteLine("Enter an integer B.");
+input114 = Console.ReadLine();
+int b114 = Convert.ToInt32(input114);
+int sum114 = 0;
+for (int i = a114; i <= b114; i++)
+{
+    if (i % 7 == 0)
+    {
+        sum114 += i;
+    }
+}
+Console.WriteLine("The sum of all integers from A to B that can be divided by 7 is: " + sum114 + ".");
+
+
+
+
+
+
+
+
+
+// Unit 11-5 Пользователь вводит положительное число (N). Выведите N-ое число ряда Фибоначчи. В ряду Фибоначчи каждое 
+//следующее число является суммой двух предыдущих (1, 1, 2, 3, 5, 8, 13...). Первое и второе считаются равными 1.
+//
 
 
 
@@ -414,3 +428,15 @@ if (counter == 0)
 {
     Console.WriteLine("There are no integers from 1 to 1000 that can be divided by A.");
 }
+
+// Unit 11-3 User enters an integer (A). Count and Write nubmer of positive integers (B), if B^B < A.
+Console.WriteLine("Unit 11-3: \nEnter an integer А.");
+string input113 = Console.ReadLine();
+int a113 = Convert.ToInt32(input113);
+int counter113 = 0;
+for (int b113 = 1; b113 * b113 < a113; b113++)
+{
+    counter113++;
+    //Console.WriteLine(b113 + " "); //for debugging
+}
+Console.WriteLine("Number of positive integers that, if squared, are less that A: " + counter113);
