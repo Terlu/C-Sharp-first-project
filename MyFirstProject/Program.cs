@@ -29,9 +29,8 @@ Console.WriteLine("The sum of all integers from A to B that can be divided by 7 
 
 
 
-// Unit 11-5 Пользователь вводит положительное число (N). Выведите N-ое число ряда Фибоначчи. В ряду Фибоначчи каждое 
-//следующее число является суммой двух предыдущих (1, 1, 2, 3, 5, 8, 13...). Первое и второе считаются равными 1.
-//
+// Unit 11-5 User enters a positive integer (N). Write (N)th nuber of Fibonacci sequence (i.e. every next integer is a sum of of two previous integers: 1, 1, 2, 3, 5, 8, 13...). 
+ 
 
 
 
