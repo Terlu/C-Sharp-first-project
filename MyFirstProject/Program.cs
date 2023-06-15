@@ -2,51 +2,38 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-//Unit 10
-//Unit 10-1. User enters 2-digit number. Write to console a spelling of this number. For instance, write "twenty five" for “25” entered by the user. 
-//NB: Think about first and last digit separately.
-Console.WriteLine("\nUnit 10-1: \nEnter a 2-digit number (from 10 to 99).");
-string input101 = Console.ReadLine();
-int a101 = Convert.ToInt32(input101);
-//test that input is correct:
-if ((a101 >= 10) & (a101 <= 99))
+// Unit 11-2 User enters an integer (A). Write all integers from 1 to 1000 that can be divided by A. 
+Console.WriteLine("\nUnit 11-2 \nEnter an integer A.");
+string input112 = Console.ReadLine();
+int a112 = Convert.ToInt32(input112);
+Console.WriteLine("All integers from 1 to 1000 that can be divided by A are: ");
+int counter = 0;
+for (int i = 1; i <= 1000; i++)
 {
-    int firstDigit = a101/10;
-    int secondDigit = a101%10;
-    //Console.WriteLine(firstDigit + " " + secondDigit);
-    string[] arrayFirst = new string[] {"", "one", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-    string[] arraySecond = new string[] {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-    //Console.WriteLine(arraySecond[secondDigit]);
-    if (firstDigit == 1)
+    if (i % a112 == 0)
     {
-        if (secondDigit == 1)
-        {
-            Console.WriteLine("Please have your number in written: eleven");
-        }
-        else if (secondDigit == 2){
-            Console.WriteLine("Please have your number in written: twelve");
-        } else if (secondDigit == 3)
-        {
-            Console.WriteLine("Please have your number in written: thirteen");
-        } else if (firstDigit == 5) {
-            Console.WriteLine("Please have your number in written: fifteen");
-        }
-        else if (firstDigit == 8)
-        {
-            Console.WriteLine("Please have your number in written: eighteen");
-        } else
-        {
-            Console.WriteLine("Please have your number in written: " + arraySecond[secondDigit] + "teen");
-        }
+        counter++;
+        Console.WriteLine(i + " ");
     }
-    else
-    {
-        Console.WriteLine("Please have your number in written: " + arrayFirst[firstDigit] + " " + arraySecond[secondDigit]);
-    };
-} else
-{
-    Console.WriteLine("Your input was not correct");
 }
+if (counter == 0)
+{
+    Console.WriteLine("There are no integers from 1 to 1000 that can be divided by A.");
+}
+
+
+
+
+
+/* Unit 11-3 Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
+* Unit 11-4 Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся на 7.
+* Unit 11-5 Пользователь вводит положительное число (N). Выведите N-ое число ряда Фибоначчи. В ряду Фибоначчи каждое 
+* следующее число является суммой двух предыдущих (1, 1, 2, 3, 5, 8, 13...). Первое и второе считаются равными 1.
+*/
+
+
+
+
 
 
 //Unit 5 (06Jun2023)
@@ -332,4 +319,91 @@ if (temp93First >= temp93Second)
 else
 {
     Console.Write(temp93Second + ", " + temp93First);
+}
+
+//Unit 10
+//Unit 10-1. User enters 2-digit number. Write to console a spelling of this number. For instance, write "twenty five" for “25” entered by the user. 
+//NB: Think about first and last digit separately.
+Console.WriteLine("\nUnit 10-1: \nEnter a 2-digit number (from 10 to 99).");
+string input101 = Console.ReadLine();
+int a101 = Convert.ToInt32(input101);
+//test that input is correct:
+if ((a101 >= 10) & (a101 <= 99))
+{
+    int firstDigit = a101 / 10;
+    int secondDigit = a101 % 10;
+    //Console.WriteLine(firstDigit + " " + secondDigit);
+    string[] arrayFirst = new string[] { "", "one", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+    string[] arraySecond = new string[] { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+    //Console.WriteLine(arraySecond[secondDigit]);
+    if (firstDigit == 1)
+    {
+        if (secondDigit == 1)
+        {
+            Console.WriteLine("Please have your number in written: eleven");
+        }
+        else if (secondDigit == 2)
+        {
+            Console.WriteLine("Please have your number in written: twelve");
+        }
+        else if (secondDigit == 3)
+        {
+            Console.WriteLine("Please have your number in written: thirteen");
+        }
+        else if (firstDigit == 5)
+        {
+            Console.WriteLine("Please have your number in written: fifteen");
+        }
+        else if (firstDigit == 8)
+        {
+            Console.WriteLine("Please have your number in written: eighteen");
+        }
+        else
+        {
+            Console.WriteLine("Please have your number in written: " + arraySecond[secondDigit] + "teen");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Please have your number in written: " + arrayFirst[firstDigit] + " " + arraySecond[secondDigit]);
+    };
+}
+else
+{
+    Console.WriteLine("Your input was not correct");
+}
+
+// Unit 11 (12Jun2023) For cycle
+// Unit 11-1 User enters 2 integers: A and B. Write a result of ecponentiation: A^B.
+// Assume that B is a non-negative integer.
+Console.WriteLine("\nUnit 11-1 \nEnter an integer A.");
+string input111 = Console.ReadLine();
+int a111 = Convert.ToInt32(input111);
+Console.WriteLine("Enter an integer B.");
+input111 = Console.ReadLine();
+int b111 = Convert.ToInt32(input111);
+double res = 1;
+if ((a111 >= 0) & (b111 >= 0))
+{
+    for (int i = 0; i < b111; i++)
+    {
+        res = res * a111;
+    }
+    Console.WriteLine("A^B equals to: " + res);
+}
+else if ((a111 != 0) & (b111 < 0))
+{
+    for (int i = 0; i < (-b111); i++)
+    {
+        res = res * a111;
+    }
+    Console.WriteLine("A^B equals to: " + res);
+}
+else if (a111 == 0)
+{
+    Console.WriteLine("Undefined");
+}
+else
+{
+    Console.WriteLine("ERROR");
 }
