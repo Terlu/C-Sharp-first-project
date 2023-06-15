@@ -2,24 +2,49 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-
-//Unit 12-4) Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
-Console.WriteLine("Unit 12-4: \nEnter an integer.");
-string input124 = Console.ReadLine();
-int n124 = Convert.ToInt32(input124);
-int mirror124 = 0;
-while (n124 > 0)
+//Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. Use bisection method.
+Console.WriteLine("Unit 12-5: \nEnter a positive integer N that is a cube of some integer.");
+string input125 = Console.ReadLine();
+int n125 = Convert.ToInt32(input125);
+int cubeRoot125 = 0;
+int leftBorder125 = 0;
+int rightBorder125 = n125;
+if (n125 <= 0)
 {
-    mirror124 = mirror124 * 10 + n124 % 10;
-    n124 = n124 / 10;
+    Console.WriteLine("N must be a positive integer.");
 }
-Console.WriteLine("The mirror of the number is: " + mirror124 + "\n");
+else
+{
+    while (leftBorder125 <= rightBorder125)
+    {
+        int middle125 = (leftBorder125 + rightBorder125) / 2;
+        int counter125 = 0;
+        if (middle125 * middle125 * middle125 == n125)
+        {
+            cubeRoot125 = middle125;
+            counter125++;
+            break;
+        }
+        else if (middle125 * middle125 * middle125 < n125)
+        {
+            leftBorder125 = middle125 + 1;
+        }
+        else
+        {
+            rightBorder125 = middle125 - 1;
+        }
+    }
+    if (cubeRoot125 == 0)
+    {
+        Console.WriteLine(n125 + " is not a cube of any integer.");
+    }
+    else
+    {
+        Console.WriteLine("The cube root of " + n125 + " is " + cubeRoot125 + ".\n");
+    }
+}
 
-//Unit 12-5 User enters a positive integer (N) that is a cube of some integer. Find and write cube root of the N. 
-//Console.WriteLine("Unit 12-5: \nEnter a positive integer N that is a cube of some integer.");
-//string input125 = Console.ReadLine();
-//int n125 = Convert.ToInt32(input125);
-//int cubeRoot125 = 0;
+
 
 
 
@@ -550,3 +575,15 @@ while (n123 != 0)
     n123 = n123 / 10;
 }
 Console.WriteLine("The number of odd digits of this integer is: " + oddDigits123 + "\n");
+
+//Unit 12-4. User enters an integer. Find an integer that is mirror of the integer. For example, if the user enters 123, write 321.
+Console.WriteLine("Unit 12-4: \nEnter an integer.");
+string input124 = Console.ReadLine();
+int n124 = Convert.ToInt32(input124);
+int mirror124 = 0;
+while (n124 != 0)
+{
+    mirror124 = mirror124 * 10 + n124 % 10;
+    n124 = n124 / 10;
+}
+Console.WriteLine("The mirror of the number is: " + mirror124 + "\n");
