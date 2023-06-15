@@ -2,7 +2,7 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-// Unit 11-3 User enters an integer (A). Write all positive integers (B), if B^B < A.
+// Unit 11-3 User enters an integer (A). Count and Write nubmer of positive integers (B), if B^B < A.
  Console.WriteLine("Unit 11-3: \nEnter an integer А.");
 string input113 = Console.ReadLine();
 int a113 = Convert.ToInt32(input113);
@@ -14,7 +14,7 @@ for (int b113 = 1; b113 * b113 < a113; b113++)
 }
 Console.WriteLine("Number of positive integers that, if squared, are less that A: " + counter113);
 
-/* Unit 11-4 Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся на 7.
+/* Unit 11-4 User enters 2 integers (A and B). Write a Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся на 7.
 * Unit 11-5 Пользователь вводит положительное число (N). Выведите N-ое число ряда Фибоначчи. В ряду Фибоначчи каждое 
 * следующее число является суммой двух предыдущих (1, 1, 2, 3, 5, 8, 13...). Первое и второе считаются равными 1.
 */
