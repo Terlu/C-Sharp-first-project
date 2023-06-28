@@ -2,25 +2,28 @@
 using System.Runtime.Serialization.Formatters;
 using System.Xml.Linq;
 
-//Unit 13-2. User enters a sequence of integers of unknown lenght, but ending with 0 (0 to stop).
-//Find and write the maximum integer in this sequence.
-Console.WriteLine("Unit 13-2: \nEnter a sequence of numbers. Enter 0 to stop.");
-string input132;
-int max132 = 0;
+
+
+//Unit 13-3. User enters a sequence of integers of unknown lenght, but ending with 0 (0 to stop).
+//Count all integers that can be divided by 3 or 7 or 11.
+Console.WriteLine("Unit 13-3: \nEnter a sequence of integers of unknown lenght, but ending with 0 (0 to stop).");
+int count133 = 0;
+int number133 = 1;
 do
 {
-    input132 = Console.ReadLine();
-    int number132 = Convert.ToInt32(input132);
-    if  (number132 > max132)
+    string input133 = Console.ReadLine();
+    number133 = Convert.ToInt32(input133);
+    if (((number133 % 3 == 0) || (number133 % 7 == 0) || (number133 % 11 == 0)) & (number133 != 0))
     {
-        max132 = number132;
+        count133++;
     }
-} while (input132 != "0");
-Console.WriteLine("The biggest number in the sequence is " + max132 + ".");
+} while (number133 != 0);
+Console.WriteLine("There are " + count133 + " number(s) that can be divided by 3 or 7 or 11.\n");
 
-//Unit 13-3. Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности).
-// Найти количество чисел в последовательности, которые делятся на 3, 7 или 11.
-//4) Пользователь вводит последовательность чисел неопределенной длины заканчивающуюся 0 (больше 0 не встречается в последовательности). Определить модуль суммы каких чисел больше, положительных или отрицательных.
+
+
+//Unit 13-4) User enters a sequence of integers of unknown lenght, but ending with 0 (0 to stop). 
+// Определить модуль суммы каких чисел больше, положительных или отрицательных.
 
 
 
@@ -619,3 +622,19 @@ do
     Console.WriteLine("Enter your password.");
     password131 = Console.ReadLine();
 } while (password131 != "Pass123!");
+
+//Unit 13-2. User enters a sequence of integers of unknown lenght, but ending with 0 (0 to stop).
+//Find and write the maximum integer in this sequence.
+Console.WriteLine("Unit 13-2: \nEnter a sequence of numbers. Enter 0 to stop.");
+string input132;
+int max132 = 0;
+do
+{
+    input132 = Console.ReadLine();
+    int number132 = Convert.ToInt32(input132);
+    if (number132 > max132)
+    {
+        max132 = number132;
+    }
+} while (input132 != "0");
+Console.WriteLine("The biggest number in the sequence is " + max132 + ".");
